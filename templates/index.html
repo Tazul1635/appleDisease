@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Apple Leaf Disease Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      form {
+        margin: 20px;
+      }
+      img {
+        max-width: 300px;
+        margin: 20px;
+      }
+      h1 {
+        color: #333;
+      }
+      h2 {
+        color: #0066cc;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Apple Leaf Disease Predictor</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept="image/*" />
+      <input type="submit" value="Predict" />
+    </form>
+    {% if prediction %}
+    <h2>Prediction: {{ prediction }}</h2>
+    {% if image_path %}
+    <img src="{{ image_path }}" alt="Uploaded Image" />
+    {% endif %} {% endif %}
+  </body>
+</html>
